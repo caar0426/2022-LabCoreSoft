@@ -1,0 +1,50 @@
+<div class="container">
+    <h2>Modificar Paciente</h2>
+    <form [formGroup]="formularioModificar" (ngSubmit)="onSubmit()">
+        <input type="hidden" formControlName="id" >
+        <mat-form-field appearance="fill">
+        <mat-label>Nombres</mat-label>
+        <input matInput formControlName="nombres">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Apellidos</mat-label>
+        <input matInput formControlName="apellidos">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Numero Documento</mat-label>
+        <input matInput formControlName="numeroDocumento">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Tipo Documento</mat-label>
+        <mat-select formControlName="tipoDocumentoId">
+          <mat-option *ngFor="let itemTipoDocumento of tipoDocumento" [value]="itemTipoDocumento.id">
+            {{itemTipoDocumento.descripcion}}
+          </mat-option>
+        </mat-select>
+      
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha Nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Ciudad</mat-label>
+        <mat-select formControlName="ciudadId">
+          <mat-option *ngFor="let itemCiudad of ciudad" [value]="itemCiudad.id">
+            {{itemCiudad.descripcion}}
+          </mat-option> 
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <button type="submit" mat-button color="primary">Guardar</button> | 
+      <button mat-button color="accent" (click)="goToList()">Regresar A Listado Pacientes</button>      
+    </form>
+  </div>

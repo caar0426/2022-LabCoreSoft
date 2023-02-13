@@ -1,0 +1,9 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Back/CentroMedico/CentroMedico/obj/Debug/net6.0
+/Back/CentroMedico/CentroMedico/obj/Release/net6.0
+/Back/CentroMedico/CentroMedico/Properties
+/Front/centro-medico/src/.vs
